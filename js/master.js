@@ -29,3 +29,87 @@ const images = [
 ]
 
 
+
+// LOGIC PART OF THE CAROUSEL: 
+
+
+let containerDOMElement = document.querySelector('.container-big')
+
+
+
+let indexCurrentImage = 0;
+
+let containerPrewDOMElement = document.querySelector('.container-prew')
+
+for (let i = 0; i < images.length; i++ ) {
+    let currentSrc = images[i].image ;
+    let currentTitle = images[i].title ;
+    let currentText = images[i].text ;
+    
+
+    let htmlString = `
+    <div class="image"> 
+        <img src="${currentSrc}">
+        <h4>${currentTitle}</h4>
+        <p>${currentText}</p>
+    </div>
+    `
+    
+    let htmlThumb = `
+    <div class="thumbs"> 
+        <img src="${currentSrc}">
+    </div>
+    `
+    containerPrewDOMElement.innerHTML += htmlThumb
+    containerDOMElement.innerHTML += htmlString
+
+}
+
+
+let imageDOMElements = document.querySelectorAll('.image')
+
+
+
+let currentImageDOMElement = imageDOMElements[indexCurrentImage]
+currentImageDOMElement.classList.add('active')
+
+
+
+document.querySelector(".button-backward").addEventListener("click", function() {
+   
+  
+    let currentImageDOMElement = imageDOMElements[indexCurrentImage]
+    currentImageDOMElement.classList.remove('active')
+
+
+    indexCurrentImage--;
+
+    if (indexCurrentImage < 0){
+        indexCurrentImage = images.length-1
+        
+    }
+
+
+    let prevImageDOMElement = imageDOMElements[indexCurrentImage]
+    prevImageDOMElement.classList.add('active')
+  });
+
+
+document.querySelector(".button-forward").addEventListener("click", function() {
+   
+  
+    let currentImageDOMElement = imageDOMElements[indexCurrentImage]
+    currentImageDOMElement.classList.remove('active')
+
+
+    indexCurrentImage++;
+    
+    if (indexCurrentImage > (images.length)-1){
+        indexCurrentImage = 0   
+    }
+
+
+    let nextImageDOMElement = imageDOMElements[indexCurrentImage]
+    nextImageDOMElement.classList.add('active')
+
+  });
