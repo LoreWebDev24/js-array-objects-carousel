@@ -93,13 +93,19 @@ button {
 .button-change-dir {
     position:absolute;
     top: 10% ;
-    left: 54%;
+    left: 60%;
 }
 
 .stop-auto-carusel {
     position: absolute;
     left: 40%;
     top: 10% ;
+}
+
+.play-auto-carusel {
+    position: absolute;
+    left: 50%;
+    top: 10%;
 }
 
 .image {

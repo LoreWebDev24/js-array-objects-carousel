@@ -144,18 +144,23 @@ let imageDOMElements = document.querySelectorAll('.image')
 let currentImageDOMElement = imageDOMElements[indexCurrentImage]
 currentImageDOMElement.classList.add('active')
 
+// AUTO CAROSELLO ALWAYS ACTIVE
 
+let intervalID;
+
+intervalID = setInterval(autoCarusel, 3000);
+
+// EVENT LISTENERS 
 
 document.querySelector(".button-backward").addEventListener("click", function () {
 
-    goBackward ()
-
+    goBackward ();
 });
 
 
 document.querySelector(".button-forward").addEventListener("click", function () {
 
-    goForward ()
+    goForward ();
 
 });
 
@@ -165,11 +170,17 @@ document.querySelector('.button-change-dir').addEventListener('click', function 
 
 });
 
-const intervalID = setInterval(autoCarusel, 3000);
 
 document.querySelector('.stop-auto-carusel').addEventListener('click', function () {
 
     clearInterval(intervalID);
+
+});
+
+document.querySelector('.play-auto-carusel').addEventListener('click', function () {
+    
+    clearInterval(intervalID);
+    intervalID = setInterval(autoCarusel, 3000);
 
 });
 
