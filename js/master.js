@@ -113,3 +113,27 @@ document.querySelector(".button-forward").addEventListener("click", function() {
     nextImageDOMElement.classList.add('active')
 
   });
+
+
+
+
+
+
+const intervalID = setInterval(autoCarusel, 3000);
+
+
+ function autoCarusel () {
+    let currentImageDOMElement = imageDOMElements[indexCurrentImage]
+    currentImageDOMElement.classList.remove('active')
+
+
+    indexCurrentImage++;
+    
+    if (indexCurrentImage > (images.length)-1){
+        indexCurrentImage = 0   
+    }
+
+
+    let nextImageDOMElement = imageDOMElements[indexCurrentImage]
+    nextImageDOMElement.classList.add('active')
+ }
