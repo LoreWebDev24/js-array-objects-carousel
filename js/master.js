@@ -167,6 +167,12 @@ document.querySelector('.button-change-dir').addEventListener('click', function 
 
 const intervalID = setInterval(autoCarusel, 3000);
 
+document.querySelector('.stop-auto-carusel').addEventListener('click', function () {
+
+    clearInterval(intervalID);
+
+});
+
 
 
 
