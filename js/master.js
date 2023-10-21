@@ -79,7 +79,7 @@ function goToSlide(index) {
 const images = [
     {
         image: 'img/01.webp',
-        title: "Marvel's Spiderman Miles Morale",
+        title: "Marvel's Spiderman Miles Morales",
         text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
     },
     {
@@ -144,9 +144,11 @@ for (let i = 0; i < images.length; i++) {
 }
 
 
-// Mi recupero tutte le immagini di classe img create
+// Mi recupero tutte le immagini di classe img e thumbs create
 
 let imageDOMElements = document.querySelectorAll('.image')
+
+let thumbsDOMElements = document.querySelectorAll('thumbs')
 
 
 
@@ -211,8 +213,10 @@ document.querySelector('.container-big').addEventListener('mouseleave', () => {
 })
 
 
-document.querySelectorAll('thumbs').forEach((thumb, i) => {
+thumbsDOMElements.forEach((thumb, i) => {
 	thumb.addEventListener('click', function () {
+
+        console.log('Clicked')
 
 		goToSlide(i)
         
