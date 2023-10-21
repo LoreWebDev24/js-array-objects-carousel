@@ -184,6 +184,22 @@ document.querySelector('.play-auto-carusel').addEventListener('click', function 
 
 });
 
+// SISTEMA DI SPEGNIMENTO DELL' AUTO CAROUSEL QUANDO SI VA CON IL MOUSE SUL CAROSELLO: 
+
+let autoplay
+
+document.querySelector('.container-big').addEventListener('mouseenter', () => {
+	
+	clearInterval(intervalID)
+	autoplay = null
+})
+
+document.querySelector('.container-big').addEventListener('mouseleave', () => {
+
+	if (!autoplay) {
+		autoplay = setInterval(autoCarusel, 3000)
+	}
+})
 
 
 

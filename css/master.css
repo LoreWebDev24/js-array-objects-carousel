@@ -14,6 +14,11 @@ body {
     gap: 20px;
     padding-right: 30px;
     background-color: gray;
+    align-items: center;
+    justify-content: center;
+    min-width: 1000px;
+    overflow-x: scroll;
+    overflow-y: hidden;
 }
 
 .container-big {
@@ -82,34 +87,43 @@ button {
     position:absolute;
     top: 50% ;
     left: 5%;
+    z-index: 9999;
 }
 
 .button-forward {
     position:absolute;
     top: 50% ;
     right: 5%;
+    z-index: 9999;
 }
 
 .button-change-dir {
     position:absolute;
-    top: 10% ;
-    left: 60%;
+    top: 5% ;
+    left:56%;
+    z-index: 9999;
+    color: black;
 }
 
 .stop-auto-carusel {
     position: absolute;
     left: 40%;
-    top: 10% ;
+    top: 5% ;
+    z-index: 9999;
+    color: black;
 }
 
 .play-auto-carusel {
     position: absolute;
-    left: 50%;
-    top: 10%;
+    left: 48%;
+    top: 5%;
+    z-index: 9999;
+    color: black;
 }
 
 .image {
     display: none;
+    position: relative;
 }
 
 .active {
