@@ -63,6 +63,15 @@ function goBackward () {
     prevImageDOMElement.classList.add('active')
 }
 
+function goToSlide(index) {
+
+	imageDOMElements[indexCurrentImage].classList.remove('active')
+
+	indexCurrentImage = index
+
+	imageDOMElements[indexCurrentImage].classList.add('active')
+}
+
 
 
 // MY ARRAY OF OBJECTS CONTAINING IMG SRC GAME TITLE AND DESCRIPTION :
@@ -126,7 +135,7 @@ for (let i = 0; i < images.length; i++) {
 
     let htmlThumb = `
     <div class="thumbs"> 
-        <img src="${currentSrc}">
+        <img data-index="${i}" src="${currentSrc}">
     </div>
     `
     containerPrewDOMElement.innerHTML += htmlThumb
@@ -186,21 +195,27 @@ document.querySelector('.play-auto-carusel').addEventListener('click', function 
 
 // SISTEMA DI SPEGNIMENTO DELL' AUTO CAROUSEL QUANDO SI VA CON IL MOUSE SUL CAROSELLO: 
 
-let autoplay
+
 
 document.querySelector('.container-big').addEventListener('mouseenter', () => {
 	
 	clearInterval(intervalID)
-	autoplay = null
+	intervalID= null
 })
 
 document.querySelector('.container-big').addEventListener('mouseleave', () => {
 
-	if (!autoplay) {
-		autoplay = setInterval(autoCarusel, 3000)
+	if (!intervalID) {
+		intervalID = setInterval(autoCarusel, 3000)
 	}
 })
 
 
+document.querySelectorAll('thumbs').forEach((thumb, i) => {
+	thumb.addEventListener('click', function () {
 
+		goToSlide(i)
+        
+	})
+})
 

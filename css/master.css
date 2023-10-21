@@ -100,17 +100,23 @@ button {
 .button-change-dir {
     position:absolute;
     top: 5% ;
-    left:56%;
+    left:61%;
     z-index: 9999;
-    color: black;
+    color: white;
+    padding: 4px;
+    border-radius: 10px;
+    transform: translateX(-50%);
 }
 
 .stop-auto-carusel {
     position: absolute;
-    left: 40%;
+    left: 35%;
     top: 5% ;
     z-index: 9999;
-    color: black;
+    color: white;
+    padding: 4px;
+    border-radius: 10px;
+    transform: translateX(-50%);
 }
 
 .play-auto-carusel {
@@ -118,7 +124,10 @@ button {
     left: 48%;
     top: 5%;
     z-index: 9999;
-    color: black;
+    color: white;
+    padding: 4px;
+    border-radius: 10px;
+    transform: translateX(-50%);
 }
 
 .image {
