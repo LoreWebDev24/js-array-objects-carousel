@@ -30,7 +30,7 @@ function autoCarusel() {
 function goForward () {
 
     let currentImageDOMElement = imageDOMElements[indexCurrentImage]
-    currentImageDOMElement.classList.remove('active')
+    currentImageDOMElement.classList.remove('active');
 
 
     indexCurrentImage++;
@@ -41,7 +41,7 @@ function goForward () {
 
 
     let nextImageDOMElement = imageDOMElements[indexCurrentImage]
-    nextImageDOMElement.classList.add('active')
+    nextImageDOMElement.classList.add('active');
 }
 
 
@@ -148,7 +148,7 @@ for (let i = 0; i < images.length; i++) {
 
 let imageDOMElements = document.querySelectorAll('.image')
 
-let thumbsDOMElements = document.querySelectorAll('thumbs')
+let thumbsDOMElements = document.querySelectorAll('.thumbs')
 
 
 
@@ -211,6 +211,9 @@ document.querySelector('.container-big').addEventListener('mouseleave', () => {
 		intervalID = setInterval(autoCarusel, 3000)
 	}
 })
+
+
+// GESTIONE ON CLICK DELLE CAROUSEL PREW:
 
 
 thumbsDOMElements.forEach((thumb, i) => {
